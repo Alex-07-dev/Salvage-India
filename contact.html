@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Salvage India</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  body{background:#eef7fc;}
+  .contact-wrap{max-width:1200px;margin:32px auto;padding:0 24px 42px;display:grid;grid-template-columns:360px 1fr;gap:28px;}
+  .contact-info{background:#fff;border:1px solid var(--border);border-radius:8px;padding:26px;box-shadow:0 8px 24px rgba(13,35,64,0.06);}
+  .contact-info h1{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:10px;}
+  .contact-info p.sub{font-size:14px;color:var(--text-muted);margin-bottom:24px;}
+  .info-item{display:flex;gap:12px;margin-bottom:20px;}
+  .info-item .ic{width:38px;height:38px;border-radius:8px;background:var(--bg-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .info-item h4{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+  .info-item p{font-size:13px;color:var(--text-muted);}
+  .contact-form-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:28px;box-shadow:0 8px 26px rgba(13,35,64,0.06);}
+  .contact-form-card h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:18px;}
+  .form-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .send-btn{padding:12px 26px;border:none;border-radius:6px;background:var(--orange);color:#fff;font-weight:700;font-size:14px;margin-top:6px;}
+  .send-btn:hover{background:var(--orange-dark);}
+  .map-box{margin-top:20px;height:180px;border-radius:8px;background:var(--bg-light) url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=700&q=80') center/cover;}
+  @media(max-width:800px){.contact-wrap{grid-template-columns:1fr;} .form-grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></a>
+  <nav class="main-nav">
+    <a href="index.html">Home</a><a href="live-auctions.html">Live Auctions</a><a href="live-auctions.html">Upcoming Auctions</a><a href="how-it-works.html">How It Works</a><a href="index.html#buyers">Buyers</a><a href="seller-landing.html">Sellers</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a>
+  </nav>
+  <div class="header-actions"><a href="login.html" class="btn-outline">Login</a><a href="login.html" class="btn-orange">Register</a></div>
+</header>
+
+<div class="contact-wrap">
+  <div class="contact-info">
+    <h1>Contact Us</h1>
+    <p class="sub">Get in touch with the Salvage India team, we'd love to hear from you.</p>
+    <div class="info-item"><div class="ic">📍</div><div><h4>Our Office</h4><p>123 Business Tower, Sector 62, Noida, Uttar Pradesh - 201301</p></div></div>
+    <div class="info-item"><div class="ic">📞</div><div><h4>Phone</h4><p>+91 75219 21771</p></div></div>
+    <div class="info-item"><div class="ic">✉️</div><div><h4>Email</h4><p>annu.singhslavageindia@gmail.com</p></div></div>
+    <div class="info-item"><div class="ic">🕐</div><div><h4>Working Hours</h4><p>Mon - Sat, 9:00 AM - 6:00 PM</p></div></div>
+    <div class="map-box"></div>
+  </div>
+
+  <div class="contact-form-card">
+    <h3>Send Us A Message</h3>
+    <form onsubmit="return false;">
+      <div class="form-grid2">
+        <div class="field"><label>Name *</label><input type="text" placeholder="Enter your name"></div>
+        <div class="field"><label>Mobile Number *</label><input type="text" placeholder="Enter mobile number"></div>
+        <div class="field"><label>Email *</label><input type="email" placeholder="Enter email"></div>
+        <div class="field"><label>Subject</label><input type="text" placeholder="What's this about?"></div>
+      </div>
+      <div class="field" style="margin-bottom:18px;"><label>Message *</label><textarea rows="5" placeholder="Write your message here..."></textarea></div>
+      <button class="send-btn" type="submit">Send Message →</button>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></div><p class="footer-desc">India's Salvage Vehicle Auction Platform</p></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="live-auctions.html">Live Auctions</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#">FAQs</a></li><li><a href="#">Terms &amp; Conditions</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+      <div><h4>Stay Connected</h4><div class="social-row"><a href="#">f</a><a href="#">in</a><a href="#">▶</a><a href="#">📷</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Salvage India. All Rights Reserved.</span></div>
+  </div>
+</footer>
+</body>
+</html>

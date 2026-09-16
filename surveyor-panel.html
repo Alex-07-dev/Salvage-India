@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surveyor Panel - Salvage India</title>
+<link rel="stylesheet" href="base.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></a>
+  <nav class="main-nav">
+    <a href="index.html">Home</a><a href="live-auctions.html">Live Auctions</a><a href="live-auctions.html">Upcoming Auctions</a><a href="how-it-works.html">How It Works</a><a href="#">Buyers</a><a href="seller-landing.html">Sellers</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a href="login.html" class="btn-orange">Register</a></div>
+</header>
+
+<div class="dash-wrap">
+  <aside class="dash-sidebar">
+    <div class="dash-profile">
+      <div class="dash-avatar" style="background:#3b6fd6;">VS</div>
+      <div><div class="name">Vikram Singh</div><div class="role">Surveyor</div></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="surveyor-panel.html" class="active">📊 <span class="label-text">Dashboard</span></a>
+      <a href="#">🚗 <span class="label-text">Assigned Vehicles</span></a>
+      <a href="#">🔍 <span class="label-text">Pending Inspection</span></a>
+      <a href="#">✅ <span class="label-text">Completed Inspection</span></a>
+      <a href="#">📷 <span class="label-text">Uploaded Photos</span></a>
+      <a href="#">📈 <span class="label-text">Reports</span></a>
+      <a href="contact.html">🎧 <span class="label-text">Support</span></a>
+      <a href="index.html">🚪 <span class="label-text">Logout</span></a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar"><h2>Inspection Dashboard</h2></div>
+
+    <div class="stat-cards" style="grid-template-columns:repeat(3,1fr);">
+      <div class="stat-card"><div class="ic">🚗</div><div><div class="num">5</div><div class="label">Assigned</div></div></div>
+      <div class="stat-card"><div class="ic">⏳</div><div><div class="num">3</div><div class="label">Pending</div></div></div>
+      <div class="stat-card"><div class="ic">✅</div><div><div class="num">12</div><div class="label">Completed</div></div></div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-card-head"><h3>Assigned Vehicles</h3><a href="#" class="link-btn">View All</a></div>
+      <table class="data-table">
+        <thead><tr><th>Vehicle</th><th>Location</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Creta 2022</td><td>Jaipur</td><td><span class="pill pending">Pending</span></td><td><a href="#" class="link-btn">View</a></td></tr>
+          <tr><td>Swift 2021</td><td>Delhi</td><td><span class="pill pending">Pending</span></td><td><a href="#" class="link-btn">View</a></td></tr>
+          <tr><td>Nexon 2023</td><td>Ahmedabad</td><td><span class="pill progress">In Progress</span></td><td><a href="#" class="link-btn">View</a></td></tr>
+          <tr><td>Scorpio 2020</td><td>Bhopal</td><td><span class="pill completed">Completed</span></td><td><a href="#" class="link-btn">View</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

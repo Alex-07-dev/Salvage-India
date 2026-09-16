@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Salvage India</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  body{background:#eef7fc;}
+  .about-hero{max-width:1200px;margin:32px auto;padding:34px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(13,35,64,0.06);}
+  .about-hero h1{font-size:30px;font-weight:800;color:var(--navy);margin-bottom:14px;}
+  .about-hero p{color:var(--text-muted);font-size:14.5px;margin-bottom:14px;max-width:480px;}
+  .about-hero img{border-radius:8px;width:100%;height:320px;object-fit:cover;}
+  .badge-row{display:flex;gap:10px;margin-top:14px;}
+  .badge-row span{background:var(--bg-light);color:var(--navy);font-size:12px;font-weight:700;padding:7px 12px;border-radius:20px;}
+  .vision-strip{background:var(--navy-dark);color:#fff;padding:50px 24px;}
+  .vision-strip .container{display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+  .vision-strip h3{font-size:12.5px;letter-spacing:1px;color:var(--orange);font-weight:700;margin-bottom:10px;}
+  .vision-strip p{font-size:16px;max-width:600px;color:#dde4ec;}
+  .about-stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:34px;max-width:1200px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(13,35,64,0.06);}
+  .about-stats .stat{text-align:center;}
+  .about-stats .num{font-size:26px;font-weight:800;color:var(--navy);}
+  .about-stats .label{font-size:12.5px;color:var(--text-muted);}
+  @media(max-width:800px){.about-hero{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></a>
+  <nav class="main-nav">
+    <a href="index.html">Home</a><a href="live-auctions.html">Live Auctions</a><a href="live-auctions.html">Upcoming Auctions</a><a href="how-it-works.html">How It Works</a><a href="index.html#buyers">Buyers</a><a href="seller-landing.html">Sellers</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a href="login.html" class="btn-outline">Login</a><a href="login.html" class="btn-orange">Register</a></div>
+</header>
+
+<div class="about-hero">
+  <div>
+    <div class="eyebrow">ABOUT SALVAGE INDIA</div>
+    <h1>India's Salvage Vehicle Auction Platform</h1>
+    <p>We're a data-driven marketplace connecting insurers, fleet owners and dealers with verified buyers for accident and salvage vehicles across India.</p>
+    <p>Our vision is to bring full transparency to the salvage vehicle market, helping sellers recover fair value and buyers find genuine, well-documented vehicles.</p>
+    <div class="badge-row"><span>Trusted</span><span>Transparent</span><span>Pan India</span></div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=700&q=80" alt="Damaged vehicle lot">
+</div>
+
+<section class="vision-strip">
+  <div class="container">
+    <div>
+      <h3>OUR VISION</h3>
+      <p>To become India's most trusted salvage vehicle auction platform — making every transaction transparent, secure and fair for buyers and sellers alike.</p>
+    </div>
+  </div>
+</section>
+
+<div class="about-stats">
+  <div class="stat"><div class="num">500+</div><div class="label">Vehicles Listed</div></div>
+  <div class="stat"><div class="num">300+</div><div class="label">Registered Buyers</div></div>
+  <div class="stat"><div class="num">98%</div><div class="label">Successful Auctions</div></div>
+  <div class="stat"><div class="num">Pan India</div><div class="label">Operations</div></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></div><p class="footer-desc">India's Salvage Vehicle Auction Platform</p></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="live-auctions.html">Live Auctions</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#">FAQs</a></li><li><a href="#">Terms &amp; Conditions</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+      <div><h4>Stay Connected</h4><div class="social-row"><a href="#">f</a><a href="#">in</a><a href="#">▶</a><a href="#">📷</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Salvage India. All Rights Reserved.</span></div>
+  </div>
+</footer>
+</body>
+</html>

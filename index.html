@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salvage India - India's Salvage Vehicle Auction Platform</title>
+<style>
+  :root{
+    --navy:#0d2340;
+    --navy-dark:#081729;
+    --orange:#f2621a;
+    --orange-dark:#d94f0f;
+    --bg-light:#f4f7fb;
+    --text-dark:#1c2a3a;
+    --text-muted:#5b6b7f;
+    --border:#e3e8ef;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',Arial,sans-serif;color:var(--text-dark);background:var(--white);line-height:1.5;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  button, .btn{cursor:pointer;font-family:inherit;}
+
+  /* ---------- HEADER ---------- */
+  header{display:flex;align-items:center;justify-content:space-between;padding:6px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--white);z-index:100;box-shadow:0 2px 14px rgba(13,35,64,0.05);}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo img{width:84px;height:auto;object-fit:contain;object-position:left center;}
+  .logo svg{width:38px;height:38px;}
+  .logo .word{font-size:20px;font-weight:800;letter-spacing:0.5px;line-height:1.1;}
+  .logo .word span{color:var(--navy);}
+  .logo .word .india{display:block;color:var(--orange);font-size:15px;letter-spacing:2px;}
+  nav{display:flex;gap:28px;}
+  nav a{font-size:12px;font-weight:700;color:var(--text-dark);padding:4px 2px;border-bottom:2px solid transparent;}
+  nav a.active{color:var(--orange);border-bottom-color:var(--orange);}
+  nav a:hover{color:var(--orange);}
+  .header-actions{display:flex;gap:12px;align-items:center;}
+  .menu-toggle{display:none;width:34px;height:34px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--navy);font-size:22px;line-height:1;font-weight:800;align-items:center;justify-content:center;cursor:pointer;}
+  .btn-outline{padding:7px 16px;border:1.5px solid var(--navy);border-radius:6px;font-weight:600;font-size:12.5px;color:var(--navy);background:transparent;}
+  .btn-outline:hover{background:var(--navy);color:var(--white);}
+  .btn-orange{padding:8px 18px;border:none;border-radius:6px;font-weight:600;font-size:12.5px;color:var(--white);background:var(--orange);}
+  .btn-orange:hover{background:var(--orange-dark);}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:linear-gradient(100deg, rgba(8,20,38,0.92) 20%, rgba(8,20,38,0.55) 55%, rgba(8,20,38,0.15) 80%),
+        url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color:var(--white);padding:70px 24px 60px;min-height:480px;}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;}
+  .eyebrow{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:1px;color:var(--orange);margin-bottom:18px;}
+  .eyebrow::before{content:"";width:26px;height:3px;background:var(--orange);display:inline-block;}
+  .hero h1{font-size:52px;font-weight:800;max-width:640px;line-height:1.1;margin-bottom:18px;}
+  .hero h1 .accent{color:var(--orange);}
+  .hero p{max-width:520px;font-size:16px;color:#d7dee8;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:14px;margin-bottom:36px;}
+  .hero-ctas .btn-orange{padding:14px 26px;font-size:15px;}
+  .hero-ctas .btn-outline-light{padding:14px 26px;border:1.5px solid rgba(255,255,255,0.6);border-radius:6px;color:var(--white);font-weight:600;font-size:15px;background:transparent;}
+  .hero-ctas .btn-outline-light:hover{background:rgba(255,255,255,0.12);}
+  .hero-features{display:flex;gap:28px;flex-wrap:wrap;}
+  .hero-feature{display:flex;align-items:center;gap:10px;font-size:14px;}
+  .hero-feature .tick{width:20px;height:20px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;}
+  .hero-feature .sub{display:block;color:#aab6c4;font-size:12px;font-weight:400;}
+  .hero-tagline{position:absolute;top:10px;right:0;font-family:Georgia, serif;font-style:italic;font-size:19px;text-align:right;color:#fff;line-height:1.3;max-width:220px;}
+
+  /* ---------- SEARCH BAR ---------- */
+  .search-bar-wrap{margin:-34px auto 0;max-width:1150px;padding:0 24px;position:relative;z-index:5;}
+  .search-bar{background:var(--white);border-radius:10px;box-shadow:0 10px 30px rgba(13,35,64,0.15);padding:22px 24px;display:flex;gap:16px;align-items:end;flex-wrap:wrap;}
+  .field{flex:1;min-width:130px;display:flex;flex-direction:column;gap:6px;}
+  .field label{font-size:12.5px;color:var(--text-muted);font-weight:600;}
+  .field select{padding:10px 10px;border:1px solid var(--border);border-radius:6px;font-size:14px;color:var(--text-dark);background:var(--white);}
+  .search-bar .btn-orange{padding:12px 26px;white-space:nowrap;display:flex;align-items:center;gap:8px;}
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section{padding:70px 24px;}
+  .section-head{margin-bottom:34px;}
+  .section-head .eyebrow{color:var(--orange);}
+  .section-head h2{font-size:30px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+  .section-head p{color:var(--text-muted);font-size:15px;max-width:520px;}
+  .section-head-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;}
+  .view-all{font-size:14px;font-weight:700;color:var(--navy);white-space:nowrap;}
+  .view-all:hover{color:var(--orange);}
+
+  /* ---------- VEHICLE CARDS ---------- */
+  .vehicle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .vehicle-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--white);transition:box-shadow .2s ease, transform .2s ease;}
+  .vehicle-card:hover{box-shadow:0 12px 26px rgba(13,35,64,0.12);transform:translateY(-3px);}
+  .vehicle-img{position:relative;height:150px;overflow:hidden;background:#dfe4ea;}
+  .vehicle-img img{width:100%;height:100%;object-fit:cover;}
+  .badge-timer{position:absolute;top:10px;left:10px;background:var(--orange-dark);color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:4px;}
+  .vehicle-body{padding:16px;}
+  .vehicle-title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .vehicle-title-row h3{font-size:16px;font-weight:700;}
+  .tag-accident{font-size:11px;font-weight:700;color:#c0392b;background:#fde8e5;padding:3px 8px;border-radius:4px;}
+  .vehicle-meta{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+  .vehicle-meta .row{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--text-muted);}
+  .vehicle-meta .row .ic{width:14px;text-align:center;color:var(--navy);}
+  .vehicle-bid-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;}
+  .bid-block .label{font-size:11px;color:var(--text-muted);}
+  .bid-block .value{font-size:15px;font-weight:800;color:var(--navy);}
+  .bid-block.start .value{color:var(--text-muted);font-weight:700;font-size:13px;}
+  .view-bid-btn{width:100%;padding:10px;border:none;border-radius:6px;background:var(--orange);color:#fff;font-weight:700;font-size:13.5px;display:flex;align-items:center;justify-content:center;gap:6px;}
+  .view-bid-btn:hover{background:var(--orange-dark);}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .how-section{background:var(--bg-light);}
+  .steps-row{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;flex-wrap:wrap;margin-top:14px;}
+  .step{display:flex;flex-direction:column;align-items:center;text-align:center;width:150px;}
+  .step-icon{width:64px;height:64px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--navy);position:relative;margin-bottom:12px;box-shadow:0 4px 10px rgba(13,35,64,0.06);}
+  .step-icon .num{position:absolute;top:-8px;right:-6px;width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .step h4{font-size:15px;font-weight:700;margin-bottom:6px;}
+  .step p{font-size:12.5px;color:var(--text-muted);}
+  .step-arrow{align-self:center;color:var(--border);font-size:20px;margin-top:22px;}
+
+  /* ---------- CTA PANELS ---------- */
+  .cta-panels{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .cta-panel{position:relative;padding:48px 40px;min-height:320px;color:var(--white);overflow:hidden;}
+  .cta-panel.buyer{background:linear-gradient(120deg, rgba(13,35,64,0.93), rgba(13,35,64,0.8)),
+    url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=900&q=80') center/cover;}
+  .cta-panel.seller{background:#ffffff;color:var(--text-dark);}
+  .cta-panel.seller .seller-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=80') right/cover no-repeat;opacity:0.9;}
+  .cta-panel.seller .seller-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(255,255,255,0.97) 40%, rgba(255,255,255,0.25) 100%);}
+  .cta-panel .content{position:relative;z-index:2;max-width:400px;}
+  .cta-icon{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px;}
+  .cta-panel.seller .cta-icon{background:var(--bg-light);color:var(--navy);}
+  .cta-panel h3{font-size:15px;font-weight:600;opacity:0.85;}
+  .cta-panel h2{font-size:26px;font-weight:800;margin-bottom:14px;}
+  .cta-panel.buyer h2 .hl{color:var(--orange);}
+  .cta-panel ul{margin-bottom:22px;}
+  .cta-panel li{display:flex;align-items:center;gap:9px;font-size:14px;margin-bottom:8px;}
+  .cta-panel li .tick{color:var(--orange);font-weight:800;}
+
+  /* ---------- STATS ---------- */
+  .stats-section{padding:50px 24px;}
+  .stats-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:30px;}
+  .stats-left h3{font-size:19px;font-weight:800;color:var(--navy);max-width:260px;line-height:1.3;}
+  .stats-nums{display:flex;gap:44px;flex-wrap:wrap;}
+  .stat{text-align:center;}
+  .stat .ic{font-size:22px;color:var(--navy);margin-bottom:8px;}
+  .stat .num{font-size:22px;font-weight:800;color:var(--navy);}
+  .stat .label{font-size:12px;color:var(--text-muted);}
+  .quote-card{background:var(--bg-light);border-radius:10px;padding:20px 22px;max-width:280px;font-size:13px;color:var(--text-dark);position:relative;}
+  .quote-card .q{font-size:26px;color:var(--orange);font-weight:800;line-height:0;position:relative;top:8px;}
+  .quote-card .author{margin-top:10px;font-weight:700;font-size:12.5px;color:var(--text-muted);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-dark);color:#cbd5e1;padding:56px 24px 20px;}
+  .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:32px;margin-bottom:36px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-logo img{width:132px;height:auto;background:#fff;border-radius:6px;padding:4px;}
+  .footer-logo .word{font-size:19px;font-weight:800;color:#fff;}
+  .footer-logo .word .india{display:block;color:var(--orange);font-size:14px;letter-spacing:2px;}
+  .footer-desc{font-size:13px;color:#8b96a8;max-width:240px;}
+  footer h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:14px;}
+  footer li{margin-bottom:9px;font-size:13.5px;color:#a7b1c0;}
+  footer li a:hover{color:var(--orange);}
+  .social-row{display:flex;gap:10px;margin-bottom:16px;}
+  .social-row a{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:13px;}
+  .social-row a:hover{background:var(--orange);}
+  .newsletter{display:flex;margin-top:6px;}
+  .newsletter input{flex:1;padding:10px 12px;border:none;border-radius:6px 0 0 6px;font-size:13px;}
+  .newsletter button{background:var(--orange);border:none;padding:0 16px;border-radius:0 6px 6px 0;color:#fff;font-weight:700;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;display:flex;justify-content:space-between;font-size:12.5px;color:#7c8898;flex-wrap:wrap;gap:8px;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1000px){
+    nav{display:none;}
+    header .menu-toggle{display:flex;}
+    header.menu-open nav{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 12px;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 14px 28px rgba(13,35,64,0.12);}
+    header.menu-open nav a{padding:11px 0;border-bottom:1px solid var(--border);}
+    header.menu-open nav a:last-child{border-bottom:none;}
+    .vehicle-grid{grid-template-columns:repeat(2,1fr);}
+    .cta-panels{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .hero-tagline{display:none;}
+    .hero h1{font-size:38px;}
+  }
+  @media (max-width:600px){
+    .vehicle-grid{grid-template-columns:1fr;}
+    .stats-nums{gap:24px;}
+    .footer-grid{grid-template-columns:1fr;}
+    .steps-row{justify-content:center;}
+    .step-arrow{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="logo">
+    <img src="assets/salvage-india-logo.png" alt="Salvage India">
+  </div>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">⋮</button>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="live-auctions.html">Live Auctions</a>
+    <a href="live-auctions.html">Upcoming Auctions</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="index.html#buyers">Buyers</a>
+    <a href="seller-landing.html">Sellers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <a href="login.html" class="btn-outline" style="display:inline-block;text-align:center;">Login</a>
+    <a href="login.html" class="btn-orange" style="display:inline-block;">Register</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">INDIA'S SALVAGE VEHICLE AUCTION PLATFORM</div>
+    <h1>Bid. Buy. <span class="accent">Recover.</span></h1>
+    <p>Find quality salvage &amp; accident vehicles from trusted sellers across India. Transparent. Secure. Profitable.</p>
+    <div class="hero-ctas">
+      <a href="live-auctions.html" class="btn-orange" style="display:inline-block;">View Live Auctions →</a>
+      <a href="login.html" class="btn-outline-light" style="display:inline-block;">Register as Buyer</a>
+    </div>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="tick">✓</span><div>Verified Listings<span class="sub">(Inspected &amp; Documented)</span></div></div>
+      <div class="hero-feature"><span class="tick">✓</span><div>Competitive Bidding<span class="sub">(Get the Best Value)</span></div></div>
+      <div class="hero-feature"><span class="tick">✓</span><div>Transparent Process<span class="sub">(End-to-End Support)</span></div></div>
+    </div>
+    <div class="hero-tagline">"Good Vehicles<br>Get a Second<br>Chance!"</div>
+  </div>
+</section>
+
+<!-- ================= SEARCH BAR ================= -->
+<div class="search-bar-wrap">
+  <div class="search-bar">
+    <div class="field"><label>State</label><select><option>Select State</option></select></div>
+    <div class="field"><label>City</label><select><option>Select City</option></select></div>
+    <div class="field"><label>Make</label><select><option>Select Make</option></select></div>
+    <div class="field"><label>Model</label><select><option>Select Model</option></select></div>
+    <div class="field"><label>Fuel Type</label><select><option>Select Fuel Type</option></select></div>
+    <button class="btn-orange">🔍 Search</button>
+  </div>
+</div>
+
+<!-- ================= FEATURED VEHICLES ================= -->
+<section class="section" id="auctions">
+  <div class="container">
+    <div class="section-head-row">
+      <div class="section-head">
+        <div class="eyebrow">LIVE AUCTIONS</div>
+        <h2>Featured Vehicles</h2>
+        <p>Bid on verified salvage vehicles with complete details, inspection reports and photos.</p>
+      </div>
+      <a href="live-auctions.html" class="view-all">View All Live Auctions →</a>
+    </div>
+
+    <div class="vehicle-grid">
+      <div class="vehicle-card">
+        <div class="vehicle-img">
+          <span class="badge-timer">Ending in 2h 19m</span>
+          <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=500&q=80" alt="Hyundai Creta SX">
+        </div>
+        <div class="vehicle-body">
+          <div class="vehicle-title-row"><h3>Hyundai Creta SX</h3><span class="tag-accident">Accident</span></div>
+          <div class="vehicle-meta">
+            <div class="row"><span class="ic">📅</span>Year : 2022</div>
+            <div class="row"><span class="ic">⛽</span>Fuel : Diesel</div>
+            <div class="row"><span class="ic">⚙️</span>Transmission : Manual</div>
+            <div class="row"><span class="ic">📍</span>Location : Jaipur, Rajasthan</div>
+          </div>
+          <div class="vehicle-bid-row">
+            <div class="bid-block"><div class="label">Current Bid</div><div class="value">₹ 3,25,000</div></div>
+            <div class="bid-block start"><div class="label">Starting Bid</div><div class="value">₹ 2,80,000</div></div>
+          </div>
+          <a href="vehicle-detail.html" class="view-bid-btn" style="display:block;text-align:center;">View &amp; Bid →</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img">
+          <span class="badge-timer">Ending in 4h 30m</span>
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" alt="Maruti Swift VXI">
+        </div>
+        <div class="vehicle-body">
+          <div class="vehicle-title-row"><h3>Maruti Swift VXI</h3><span class="tag-accident">Accident</span></div>
+          <div class="vehicle-meta">
+            <div class="row"><span class="ic">📅</span>Year : 2021</div>
+            <div class="row"><span class="ic">⛽</span>Fuel : Petrol</div>
+            <div class="row"><span class="ic">⚙️</span>Transmission : Manual</div>
+            <div class="row"><span class="ic">📍</span>Location : Delhi, NCR</div>
+          </div>
+          <div class="vehicle-bid-row">
+            <div class="bid-block"><div class="label">Current Bid</div><div class="value">₹ 2,10,000</div></div>
+            <div class="bid-block start"><div class="label">Starting Bid</div><div class="value">₹ 1,80,000</div></div>
+          </div>
+          <a href="vehicle-detail.html" class="view-bid-btn" style="display:block;text-align:center;">View &amp; Bid →</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img">
+          <span class="badge-timer">Ending in 6h 45m</span>
+          <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=500&q=80" alt="Tata Nexon XZ+">
+        </div>
+        <div class="vehicle-body">
+          <div class="vehicle-title-row"><h3>Tata Nexon XZ+</h3><span class="tag-accident">Accident</span></div>
+          <div class="vehicle-meta">
+            <div class="row"><span class="ic">📅</span>Year : 2023</div>
+            <div class="row"><span class="ic">⛽</span>Fuel : Petrol</div>
+            <div class="row"><span class="ic">⚙️</span>Transmission : Automatic</div>
+            <div class="row"><span class="ic">📍</span>Location : Ahmedabad, Gujarat</div>
+          </div>
+          <div class="vehicle-bid-row">
+            <div class="bid-block"><div class="label">Current Bid</div><div class="value">₹ 4,75,000</div></div>
+            <div class="bid-block start"><div class="label">Starting Bid</div><div class="value">₹ 4,20,000</div></div>
+          </div>
+          <a href="vehicle-detail.html" class="view-bid-btn" style="display:block;text-align:center;">View &amp; Bid →</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img">
+          <span class="badge-timer">Ending in 8h 20m</span>
+          <img src="https://images.unsplash.com/photo-1605559911160-a3d95d213904?auto=format&fit=crop&w=500&q=80" alt="Mahindra Scorpio S11">
+        </div>
+        <div class="vehicle-body">
+          <div class="vehicle-title-row"><h3>Mahindra Scorpio S11</h3><span class="tag-accident">Accident</span></div>
+          <div class="vehicle-meta">
+            <div class="row"><span class="ic">📅</span>Year : 2020</div>
+            <div class="row"><span class="ic">⛽</span>Fuel : Diesel</div>
+            <div class="row"><span class="ic">⚙️</span>Transmission : Manual</div>
+            <div class="row"><span class="ic">📍</span>Location : Bhopal, MP</div>
+          </div>
+          <div class="vehicle-bid-row">
+            <div class="bid-block"><div class="label">Current Bid</div><div class="value">₹ 3,80,000</div></div>
+            <div class="bid-block start"><div class="label">Starting Bid</div><div class="value">₹ 3,20,000</div></div>
+          </div>
+          <a href="vehicle-detail.html" class="view-bid-btn" style="display:block;text-align:center;">View &amp; Bid →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section how-section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">HOW IT WORKS</div>
+      <h2>Simple 5 Step Process</h2>
+      <p>From listing to lifting – we make it easy, safe and transparent.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step"><div class="step-icon">📋<span class="num">1</span></div><h4>Inspect</h4><p>Vehicles are inspected and verified by our experts.</p></div>
+      <div class="step-arrow">›</div>
+      <div class="step"><div class="step-icon">🚗<span class="num">2</span></div><h4>List</h4><p>Listed on our platform with complete details.</p></div>
+      <div class="step-arrow">›</div>
+      <div class="step"><div class="step-icon">🔨<span class="num">3</span></div><h4>Bid</h4><p>Place your bid in real-time auction.</p></div>
+      <div class="step-arrow">›</div>
+      <div class="step"><div class="step-icon">💳<span class="num">4</span></div><h4>Pay</h4><p>Complete payment securely online.</p></div>
+      <div class="step-arrow">›</div>
+      <div class="step"><div class="step-icon">🚚<span class="num">5</span></div><h4>Lift</h4><p>Get your vehicle lifted from location.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA PANELS ================= -->
+<section class="cta-panels">
+  <div class="cta-panel buyer" id="buyers">
+    <div class="content">
+      <div class="cta-icon">👤</div>
+      <h3>For Buyers</h3>
+      <h2>Register <span class="hl">Now</span></h2>
+      <p style="font-size:14px;color:#c4cdda;margin-bottom:18px;">Get access to exclusive auctions, verified listings and transparent bidding.</p>
+      <ul>
+        <li><span class="tick">✓</span> Verified Seller &amp; Vehicle Details</li>
+        <li><span class="tick">✓</span> Real-time Live Auctions</li>
+        <li><span class="tick">✓</span> Secure Payment Options</li>
+        <li><span class="tick">✓</span> Dedicated Support</li>
+      </ul>
+      <a href="login.html" class="btn-orange" style="display:inline-block;">Register as Buyer →</a>
+    </div>
+  </div>
+  <div class="cta-panel seller" id="sellers">
+    <div class="seller-bg"></div>
+    <div class="seller-overlay"></div>
+    <div class="content">
+      <div class="cta-icon">🏢</div>
+      <h3 style="color:var(--text-muted);">For Sellers</h3>
+      <h2 style="color:var(--navy);">Partner With Us</h2>
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:18px;">List your salvage vehicles and reach a large network of verified buyers across India.</p>
+      <ul>
+        <li><span class="tick">✓</span> Wide Buyer Network</li>
+        <li><span class="tick">✓</span> Maximum Market Value</li>
+        <li><span class="tick">✓</span> End-to-End Auction Support</li>
+        <li><span class="tick">✓</span> Transparent &amp; Secure Process</li>
+      </ul>
+      <a href="seller-landing.html" class="btn-outline" style="display:inline-block;">Request a Partnership →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stats-left">
+        <h3>Trusted by Industry Leaders &amp; Businesses</h3>
+      </div>
+      <div class="stats-nums">
+        <div class="stat"><div class="ic">🚗</div><div class="num">500+</div><div class="label">Vehicles Listed</div></div>
+        <div class="stat"><div class="ic">👥</div><div class="num">300+</div><div class="label">Registered Buyers</div></div>
+        <div class="stat"><div class="ic">🛡️</div><div class="num">98%</div><div class="label">Successful Auctions</div></div>
+        <div class="stat"><div class="ic">📍</div><div class="num">Pan India</div><div class="label">Operations</div></div>
+      </div>
+      <div class="quote-card">
+        <div class="q">"</div>
+        Salvage India gives us access to genuine salvage vehicles with complete transparency. A game changer for our business!
+        <div class="author">— Insurance Partner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/salvage-india-logo.png" alt="Salvage India">
+        </div>
+        <p class="footer-desc">India's Salvage Vehicle Auction Platform</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="live-auctions.html">Live Auctions</a></li>
+          <li><a href="live-auctions.html">Upcoming Auctions</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="index.html#buyers">Buyers</a></li>
+          <li><a href="seller-landing.html">Sellers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Help &amp; Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay Connected</h4>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">in</a><a href="#">▶</a><a href="#">📷</a>
+        </div>
+        <p style="font-size:13px;color:#8b96a8;margin-bottom:8px;">Get latest auction updates</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Enter your email address">
+          <button>→</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Salvage India. All Rights Reserved.</span>
+      <span>Built for a Safer &amp; Smarter Future | India's Salvage Vehicle Auction Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/menu.js"></script>
+</body>
+</html>

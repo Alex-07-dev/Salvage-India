@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer Dashboard - Salvage India</title>
+<link rel="stylesheet" href="base.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></a>
+  <nav class="main-nav">
+    <a href="index.html">Home</a><a href="live-auctions.html">Live Auctions</a><a href="live-auctions.html">Upcoming Auctions</a><a href="how-it-works.html">How It Works</a><a href="#">Buyers</a><a href="seller-landing.html">Sellers</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><span class="pill available" style="padding:6px 12px;">Buyer</span></div>
+</header>
+
+<div class="dash-wrap">
+  <aside class="dash-sidebar">
+    <div class="dash-profile">
+      <div class="dash-avatar">RS</div>
+      <div><div class="name">Rohit Sharma</div><div class="role">Buyer</div></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="buyer-dashboard.html" class="active">📊 <span class="label-text">Dashboard</span></a>
+      <a href="live-auctions.html">🔨 <span class="label-text">Live Auctions</span></a>
+      <a href="#">💰 <span class="label-text">My Bids</span></a>
+      <a href="#">🏆 <span class="label-text">Won Vehicles</span></a>
+      <a href="#">💳 <span class="label-text">Payments</span></a>
+      <a href="#">📄 <span class="label-text">Documents</span></a>
+      <a href="#">🚚 <span class="label-text">Lifting Status</span></a>
+      <a href="#">👤 <span class="label-text">Profile / KYC</span></a>
+      <a href="contact.html">🎧 <span class="label-text">Support</span></a>
+      <a href="index.html">🚪 <span class="label-text">Logout</span></a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h2>My Dashboard</h2>
+    </div>
+
+    <div class="stat-cards">
+      <div class="stat-card"><div class="ic">💰</div><div><div class="num">12</div><div class="label">Active Bids</div></div></div>
+      <div class="stat-card"><div class="ic">🏆</div><div><div class="num">1</div><div class="label">Won Vehicles</div></div></div>
+      <div class="stat-card"><div class="ic">💳</div><div><div class="num">1</div><div class="label">Pending Payments</div></div></div>
+      <div class="stat-card"><div class="ic">✅</div><div><div class="num" style="font-size:15px;color:var(--green);">Verified</div><div class="label">KYC Status</div></div></div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-card-head"><h3>My Bids</h3><a href="#" class="link-btn">View All</a></div>
+      <table class="data-table">
+        <thead><tr><th>Vehicle</th><th>My Bid</th><th>Highest Bid</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Hyundai Creta 2022</td><td>₹3,10,000</td><td>₹3,15,000</td><td><span class="pill outbid">Outbid</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+          <tr><td>Maruti Swift 2021</td><td>₹2,10,000</td><td>₹2,10,000</td><td><span class="pill live">Winning</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+          <tr><td>Tata Nexon 2023</td><td>₹4,80,000</td><td>₹4,75,000</td><td><span class="pill outbid">Outbid</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+          <tr><td>Scorpio S11 2020</td><td>₹3,80,000</td><td>₹3,80,000</td><td><span class="pill progress">Loading</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyundai Creta SX 2022 - Salvage India</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  body{background:#eef7fc;}
+  .detail-wrap{max-width:1200px;margin:0 auto;padding:22px 24px 60px;display:grid;grid-template-columns:1fr 330px;gap:24px;}
+  .gallery{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-bottom:20px;}
+  .gallery .main-photo{border-radius:8px;overflow:hidden;height:342px;box-shadow:0 8px 24px rgba(13,35,64,0.08);}
+  .gallery .main-photo img{width:100%;height:100%;object-fit:cover;}
+  .gallery .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .gallery .thumbs img{height:104px;width:100%;object-fit:cover;border-radius:8px;box-shadow:0 5px 14px rgba(13,35,64,0.06);}
+  .tabs{display:flex;gap:26px;border-bottom:1px solid var(--border);margin-bottom:20px;font-size:13.5px;font-weight:600;color:var(--text-muted);}
+  .tabs span{padding-bottom:10px;border-bottom:2px solid transparent;}
+  .tabs span.active{color:var(--orange);border-color:var(--orange);}
+  .title-row{display:flex;align-items:center;gap:12px;margin-bottom:4px;flex-wrap:wrap;}
+  .title-row h1{font-size:24px;font-weight:800;color:var(--navy);}
+  .info-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:18px;box-shadow:0 8px 24px rgba(13,35,64,0.06);}
+  .info-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;}
+  .info-grid .row{display:flex;justify-content:space-between;font-size:13.5px;padding:8px 0;border-bottom:1px solid var(--bg-light);}
+  .info-grid .row span:first-child{color:var(--text-muted);}
+  .info-grid .row span:last-child{font-weight:700;color:var(--text-dark);}
+  .damage-list li{display:flex;align-items:center;gap:9px;font-size:13.5px;margin-bottom:9px;color:var(--text-dark);}
+  .damage-list li::before{content:"●";color:var(--red);font-size:9px;}
+  .doc-list .row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bg-light);font-size:13.5px;}
+  .doc-list .row:last-child{border-bottom:none;}
+
+  .bid-panel{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;height:fit-content;position:sticky;top:82px;box-shadow:0 8px 24px rgba(13,35,64,0.08);}
+  .timer-box{background:#fff3e8;border:1px solid #ffe2cc;border-radius:8px;padding:16px;color:var(--navy);text-align:center;margin-bottom:16px;}
+  .timer-box .label{font-size:12px;color:var(--text-muted);margin-bottom:8px;font-weight:700;}
+  .timer-digits{display:flex;justify-content:center;gap:10px;}
+  .timer-digits .d{text-align:center;}
+  .timer-digits .num{font-size:22px;font-weight:800;}
+  .timer-digits .unit{font-size:10px;color:var(--text-muted);}
+  .bid-info-row{display:flex;justify-content:space-between;margin-bottom:14px;}
+  .bid-info-row .block .label{font-size:11.5px;color:var(--text-muted);}
+  .bid-info-row .block .value{font-size:17px;font-weight:800;color:var(--navy);}
+  .bid-info-row .block.start .value{font-size:14px;color:var(--text-muted);}
+  .min-increment{font-size:12.5px;color:var(--text-muted);margin-bottom:14px;}
+  .bid-amount-input{display:flex;align-items:center;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:14px;}
+  .bid-amount-input span{padding:11px 12px;background:var(--bg-light);font-weight:700;color:var(--text-muted);font-size:14px;}
+  .bid-amount-input input{flex:1;border:none;padding:11px 10px;font-size:15px;font-weight:700;color:var(--navy);}
+  .bid-amount-input input:focus{outline:none;}
+  .place-bid-btn{width:100%;padding:13px;border:none;border-radius:6px;background:var(--orange);color:#fff;font-weight:700;font-size:14.5px;margin-bottom:10px;}
+  .place-bid-btn:hover{background:var(--orange-dark);}
+  .bid-history-link{display:block;text-align:center;font-size:13px;color:var(--navy);font-weight:600;}
+  .bid-history-link:hover{color:var(--orange);}
+  @media(max-width:900px){.detail-wrap{grid-template-columns:1fr;} .gallery{grid-template-columns:1fr;} .info-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></a>
+  <nav class="main-nav">
+    <a href="index.html">Home</a><a href="live-auctions.html" class="active">Live Auctions</a><a href="live-auctions.html">Upcoming Auctions</a><a href="how-it-works.html">How It Works</a><a href="index.html#buyers">Buyers</a><a href="seller-landing.html">Sellers</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a href="login.html" class="btn-outline">Login</a><a href="login.html" class="btn-orange">Register</a></div>
+</header>
+
+<div class="detail-wrap">
+  <main>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="live-auctions.html">Live Auctions</a> / Hyundai Creta SX</div>
+    <div class="title-row">
+      <h1>Hyundai Creta SX 2022</h1>
+      <span class="tag-accident">Accident Vehicle</span>
+    </div>
+
+    <div class="gallery">
+      <div class="main-photo"><img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=900&q=80" alt="Hyundai Creta SX"></div>
+      <div class="thumbs">
+        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=300&q=80" alt="Creta thumb 1">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=300&q=80" alt="Creta thumb 2">
+        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=300&q=80" alt="Creta thumb 3">
+        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=300&q=80" alt="Creta thumb 4">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=300&q=80" alt="Creta thumb 5">
+        <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=300&q=80" alt="Creta thumb 6">
+      </div>
+    </div>
+
+    <div class="tabs"><span class="active">Photos (12)</span><span>Video</span><span>Inspection Report</span><span>Documents</span></div>
+
+    <div class="info-card">
+      <h3>Vehicle Information</h3>
+      <div class="info-grid">
+        <div class="row"><span>Make</span><span>Hyundai</span></div>
+        <div class="row"><span>Model</span><span>Creta</span></div>
+        <div class="row"><span>Year</span><span>2022</span></div>
+        <div class="row"><span>Fuel</span><span>Diesel</span></div>
+        <div class="row"><span>Transmission</span><span>Manual</span></div>
+        <div class="row"><span>Odometer</span><span>48,300 km</span></div>
+        <div class="row"><span>Owner</span><span>1st Owner</span></div>
+        <div class="row"><span>Location</span><span>Jaipur, Rajasthan</span></div>
+        <div class="row"><span>RC</span><span>Available</span></div>
+        <div class="row"><span>Key</span><span>Available</span></div>
+        <div class="row"><span>Case</span><span>Accident (Right Side)</span></div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Damage Details</h3>
+      <ul class="damage-list">
+        <li>Right Front Fender - Damaged</li>
+        <li>Right Door - Damaged</li>
+        <li>Front Bumper - Damaged</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <aside>
+    <div class="bid-panel">
+      <div class="timer-box">
+        <div class="label">Auction Ends In</div>
+        <div class="timer-digits">
+          <div class="d"><div class="num">01</div><div class="unit">Hours</div></div>
+          <div class="d"><div class="num">24</div><div class="unit">Min</div></div>
+          <div class="d"><div class="num">35</div><div class="unit">Sec</div></div>
+        </div>
+      </div>
+      <div class="bid-info-row">
+        <div class="block"><div class="label">Current Bid</div><div class="value">₹ 3,25,000</div></div>
+        <div class="block start"><div class="label">Starting Bid</div><div class="value">₹ 2,80,000</div></div>
+      </div>
+      <div class="min-increment">Minimum Increment: ₹ 5,000</div>
+      <div class="field" style="margin-bottom:14px;"><label>Enter Your Bid Amount</label></div>
+      <div class="bid-amount-input"><span>₹</span><input type="text" value="3,30,000"></div>
+      <button class="place-bid-btn">Place Bid</button>
+      <a href="#" class="bid-history-link">View Bid History</a>
+    </div>
+
+    <div class="info-card">
+      <h3>Vehicle Documents</h3>
+      <div class="doc-list">
+        <div class="row"><span>RC Copy</span><span class="pill available">Available</span></div>
+        <div class="row"><span>Insurance</span><span class="pill available">Available</span></div>
+        <div class="row"><span>PUC</span><span class="pill available">Available</span></div>
+        <div class="row"><span>Fitness</span><span class="pill notavailable">Not Available</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></div><p class="footer-desc">India's Salvage Vehicle Auction Platform</p></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="live-auctions.html">Live Auctions</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#">FAQs</a></li><li><a href="#">Terms &amp; Conditions</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+      <div><h4>Stay Connected</h4><div class="social-row"><a href="#">f</a><a href="#">in</a><a href="#">▶</a><a href="#">📷</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Salvage India. All Rights Reserved.</span></div>
+  </div>
+</footer>
+</body>
+</html>

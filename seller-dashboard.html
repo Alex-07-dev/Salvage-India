@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Dashboard - Salvage India</title>
+<link rel="stylesheet" href="base.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></a>
+  <nav class="main-nav">
+    <a href="index.html">Home</a><a href="live-auctions.html">Live Auctions</a><a href="live-auctions.html">Upcoming Auctions</a><a href="how-it-works.html">How It Works</a><a href="#">Buyers</a><a href="seller-landing.html">Sellers</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a href="seller-landing.html" class="btn-orange">Register</a></div>
+</header>
+
+<div class="dash-wrap">
+  <aside class="dash-sidebar">
+    <div class="dash-profile">
+      <div class="dash-avatar" style="background:var(--navy);">AI</div>
+      <div><div class="name">ABC Insurance Ltd</div><div class="role">Seller</div></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="seller-dashboard.html" class="active">📊 <span class="label-text">Dashboard</span></a>
+      <a href="#">🚗 <span class="label-text">Vehicles</span></a>
+      <a href="live-auctions.html">🔨 <span class="label-text">Live Auctions</span></a>
+      <a href="#">✅ <span class="label-text">Completed Auctions</span></a>
+      <a href="#">💳 <span class="label-text">Payments</span></a>
+      <a href="#">📈 <span class="label-text">Reports</span></a>
+      <a href="#">👤 <span class="label-text">Profile</span></a>
+      <a href="contact.html">🎧 <span class="label-text">Support</span></a>
+      <a href="index.html">🚪 <span class="label-text">Logout</span></a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar"><h2>Seller Dashboard</h2></div>
+
+    <div class="stat-cards">
+      <div class="stat-card"><div class="ic">🚗</div><div><div class="num">25</div><div class="label">Total Vehicles</div></div></div>
+      <div class="stat-card"><div class="ic">🔨</div><div><div class="num">8</div><div class="label">Live Auctions</div></div></div>
+      <div class="stat-card"><div class="ic">💰</div><div><div class="num">146</div><div class="label">Total Bids</div></div></div>
+      <div class="stat-card"><div class="ic">✅</div><div><div class="num">12</div><div class="label">Total Sales</div></div></div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-card-head"><h3>Recent Auctions</h3><a href="#" class="link-btn">View All</a></div>
+      <table class="data-table">
+        <thead><tr><th>Vehicle</th><th>Highest Bid</th><th>Bidders</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Creta 2021</td><td>₹3,42,000</td><td>14</td><td><span class="pill live">Live</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+          <tr><td>Swift 2021</td><td>₹2,10,000</td><td>17</td><td><span class="pill live">Live</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+          <tr><td>Nexon 2023</td><td>₹4,75,000</td><td>21</td><td><span class="pill live">Live</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+          <tr><td>Scorpio 2020</td><td>₹3,80,000</td><td>15</td><td><span class="pill live">Live</span></td><td><a href="vehicle-detail.html" class="link-btn">View</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

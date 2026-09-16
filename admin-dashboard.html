@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Salvage India</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  .admin-grid{display:grid;grid-template-columns:1fr 320px;gap:18px;}
+  .activity-list{padding:4px 18px 18px;}
+  .activity-item{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-muted);}
+  .activity-item:last-child{border-bottom:none;}
+  .activity-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);margin-top:6px;flex-shrink:0;}
+  .activity-item strong{display:block;color:var(--navy);font-size:13.5px;margin-bottom:2px;}
+  @media(max-width:900px){.admin-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="assets/salvage-india-logo.png" alt="Salvage India"></a>
+  <div class="header-actions"><span class="pill progress" style="padding:6px 12px;">Admin</span></div>
+</header>
+
+<div class="dash-wrap">
+  <aside class="dash-sidebar">
+    <div class="dash-profile">
+      <div class="dash-avatar" style="background:var(--red);">AD</div>
+      <div><div class="name">Admin</div><div class="role">Administrator</div></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="admin-dashboard.html" class="active">📊 <span class="label-text">Dashboard</span></a>
+      <a href="#">🚗 <span class="label-text">Vehicle Management</span></a>
+      <a href="#">👥 <span class="label-text">Users</span></a>
+      <a href="#">🔨 <span class="label-text">Auctions</span></a>
+      <a href="#">💳 <span class="label-text">Payments</span></a>
+      <a href="#">📈 <span class="label-text">Reports</span></a>
+      <a href="contact.html">🎧 <span class="label-text">Support</span></a>
+      <a href="index.html">🚪 <span class="label-text">Logout</span></a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar"><h2>Admin Dashboard</h2></div>
+
+    <div class="stat-cards">
+      <div class="stat-card"><div class="ic">🚗</div><div><div class="num">86</div><div class="label">Total Vehicles</div></div></div>
+      <div class="stat-card"><div class="ic">👥</div><div><div class="num">112</div><div class="label">Total Users</div></div></div>
+      <div class="stat-card"><div class="ic">🔨</div><div><div class="num">312</div><div class="label">Total Bids</div></div></div>
+      <div class="stat-card"><div class="ic">💰</div><div><div class="num">284</div><div class="label">Total Sales</div></div></div>
+    </div>
+
+    <div class="admin-grid">
+      <div class="table-card">
+        <div class="table-card-head"><h3>Recent Vehicles</h3><a href="#" class="link-btn">View All</a></div>
+        <table class="data-table">
+          <thead><tr><th>Vehicle ID</th><th>Owner</th><th>City</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>SV-1021</td><td>ABC Insurance</td><td>Jaipur</td><td><span class="pill live">Live</span></td><td><a href="#" class="link-btn">View</a></td></tr>
+            <tr><td>SV-1022</td><td>ABC Insurance</td><td>Delhi</td><td><span class="pill pending">Pending</span></td><td><a href="#" class="link-btn">View</a></td></tr>
+            <tr><td>SV-1023</td><td>XYZ Motors</td><td>Ahmedabad</td><td><span class="pill completed">Completed</span></td><td><a href="#" class="link-btn">View</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head"><h3>Today's Activity</h3></div>
+        <div class="activity-list">
+          <div class="activity-item"><span class="activity-dot"></span><div><strong>New buyer registered</strong>14 minutes ago</div></div>
+          <div class="activity-item"><span class="activity-dot"></span><div><strong>Vehicle inspection completed</strong>38 minutes ago</div></div>
+          <div class="activity-item"><span class="activity-dot"></span><div><strong>Payment received</strong>1 hour ago</div></div>
+          <div class="activity-item"><span class="activity-dot"></span><div><strong>Auction approved</strong>2 hours ago</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
